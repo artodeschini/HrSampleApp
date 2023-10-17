@@ -1,6 +1,32 @@
 # Getting Started with Create React App
 
+## create app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+```bash
+mkdir rh-app
+cd rh-app
+npx create-react-app .
+```
+
+## packages instalados manualmente
+
+```bash
+npm i axios --save
+npm i react-number-format --save
+npm i react-router-dom --save
+npm i @types/react-router-dom
+```
+
+## app backend api
+
+A aplicação api é uma app java spring boot com mysql
+[API](https://github.com/artodeschini/HrSampleApi) foi adicionado cross origin para permitir o cliente react conectar ao backend
+
+```java
+@CrossOrigin(value = "http://localhost:3000")
+```
 
 ## Available Scripts
 
@@ -9,7 +35,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [localhost](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
@@ -69,11 +95,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## packages instalados
-
-```bash
-npm i axios --save
-npm i react-number-format --save
-npm i react-router-dom
-npm i @types/react-router-dom
-```
