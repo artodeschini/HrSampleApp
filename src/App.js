@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ListaEmpregado from "./empregados/ListaEmpregado";
 import Navegacao from "./shared/Navegacao";
+import GerenciarEmpregado from "./empregados/GerenciarEmpregado";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Navegacao/>
         <Routes>
           <Route exact path='/' element={<ListaEmpregado/>}></Route>
+          <Route exact path='/adicionar' element={<GerenciarEmpregado/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
