@@ -1,8 +1,10 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-export default function GerenciarEmpregado() {
+export default function SalvarEmpregado() {
+
+    const urlBase = "http://localhost:8080/rh-app/empregados";
 
     const [empregado, setEmpregado] = useState({
         nome: '',
@@ -20,7 +22,6 @@ export default function GerenciarEmpregado() {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        const urlBase = "http://localhost:8080/rh-app/empregados";
         await axios.post(urlBase, empregado);
         navegacao('/');
     };
@@ -32,22 +33,22 @@ export default function GerenciarEmpregado() {
         </div>
         <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
-                <label htmlFor="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name='nome'
+                <label htmlFor="nome" className="form-label">Nome</label>
+                <input type="text" className="form-control" id="nome" name='nome'
                     value={nome} onChange={(e) => onInputChange(e)}/>
             </div>
             <div className="mb-3">
-                <label htmlFor="departamento" class="form-label">Departamento</label>
-                <input type="text" class="form-control" id="departamento" name='departamento'
+                <label htmlFor="departamento" className="form-label">Departamento</label>
+                <input type="text" className="form-control" id="departamento" name='departamento'
                     value={departamento} onChange={(e) => onInputChange(e)}/>
             </div>
             <div className="mb-3">
-                <label htmlFor="saldo" class="form-label">Saldo</label>
-                <input type="number" step="any" class="form-control" id="saldo" name='saldo'
+                <label htmlFor="saldo" className="form-label">Saldo</label>
+                <input type="number" step="any" className="form-control" id="saldo" name='saldo'
                     value={saldo} onChange={(e) => onInputChange(e)}/>
             </div>
             <div className='text-center'>
-                <button type="submit" className="btn btn-warning btn-sn me-3">Submit</button>
+                <button type="submit" className="btn btn-warning btn-sn me-3">Salvar</button>
                 <a href='/' className="btn btn-danger btn-sn me-3">Retornar</a>
             </div>
         </form>
