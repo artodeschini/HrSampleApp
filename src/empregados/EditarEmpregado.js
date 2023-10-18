@@ -17,7 +17,7 @@ export default function EditarEmpregado() {
     // quando entrar em um componente
     useEffect(() => {
         carregarEmpregado();
-    },[]);
+    }, []);
 
     const carregarEmpregado = async () => {
         const result = await axios.get(`${urlBase}/${id}`);
